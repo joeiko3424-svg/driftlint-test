@@ -1,0 +1,12 @@
+name: DriftLint Audit Test
+on: [push]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: joeiko3424-svg/driftlint-action@v1.0.0
+        with:
+          target_file: 'public_docking_coords.npy'
+          mode: 'biotech'
